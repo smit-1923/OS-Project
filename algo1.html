@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>First Come First Serve (FCFS) - Explanation</title>
+  <link rel="stylesheet" type="text/css" href="algo1.css" />
+  <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+   rel="stylesheet"
+  />
+ </head>
+ <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+  <div id="particles-js">
+   <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="HomePage.html" style="font-size: 20px; font-weight: 550"
+     >Home</a
+    >
+    <a
+     class="navbar-brand ml-auto"
+     href="Page-Replacement-1.html"
+     style="font-size: 20px; font-weight: 550"
+     >Simulation</a
+    >
+    <a class="navbar-brand" href="graphs.html" style="font-size: 20px; font-weight: 550"
+     >Graphs</a
+    >
+
+    <button
+     class="navbar-toggler"
+     type="button"
+     data-toggle="collapse"
+     data-target="#navbarColor01"
+     aria-controls="navbarColor01"
+     aria-expanded="false"
+     aria-label="Toggle navigation"
+    >
+     <span class="navbar-toggler-icon"></span>
+    </button>
+   </nav>
+   <br />
+
+   <div class="title">
+    <h1 class="mb-5">CONCEPT - First Come First Serve (FCFS)</h1>
+    <div class="btn col-md-8">
+     <a class="btn btn-outline-primary col-md-4" href="Page-Replacement-1.html"
+      >Simulation</a
+     >
+     <a class="btn btn-outline-primary col-md-4" href="graphs.html">Graphs</a>
+    </div>
+   </div>
+  </div>
+
+  <br />
+  <br />
+  <div class="container">
+   <h1
+    class="display-3 text-dark font-weight-bold text-align-center"
+    style="font-family: 'Roboto', sans-serif"
+   >
+    First Come First Serve algorithm
+   </h1>
+   <hr class="my-4" />
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the requests are
+    addressed in the order they arrive in the disk queue.Let us understand this with the
+    help of an example.
+   </p>
+
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    Example:<br />
+    Suppose the order of request is- (82,170,43,140,24,16,190)
+    <br />
+    And current position of Read/Write head is : 50
+   </p>
+   <img
+    src="https://media.geeksforgeeks.org/wp-content/uploads/20200608201201/fcfs3.jpg"
+   />
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    So, total seek time: = (82-50)+(170-82)+(170-43)+(140-43)+(140-24)+(24-16)+(190-16) =
+    642
+   </p>
+
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    Advantages:
+    <br />
+    Every request gets a fair chance
+    <br />
+    No indefinite postponement
+    <br />
+    <br />
+    Disadvantages:
+    <br />
+    Does not try to optimize seek time
+    <br />
+    May not provide the best possible service
+   </p>
+  </div>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+ </body>
+</html>

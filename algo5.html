@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lock - Explanation</title>
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+    <div id="particles-js">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a
+          class="navbar-brand"
+          href="HomePage.html"
+          style="font-size: 20px; font-weight: 550"
+          >Home</a
+        >
+        <a
+          class="navbar-brand ml-auto"
+          href="Page-Replacement-1.html"
+          style="font-size: 20px; font-weight: 550"
+          >Simulation</a
+        >
+        <a
+          class="navbar-brand"
+          href="graphs.html"
+          style="font-size: 20px; font-weight: 550"
+          >Graphs</a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+      <br />
+
+      <div class="title">
+        <h1 class="mb-5">CONCEPT - LOCK ALGORITHM</h1>
+        <div class="btn col-md-8">
+          <a
+            class="btn btn-outline-primary col-md-4"
+            href="Page-Replacement-1.html"
+            >Simulation</a
+          >
+          <a class="btn btn-outline-primary col-md-4" href="graphs.html"
+            >Graphs</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <div class="container">
+      <h1
+        class="display-3 text-dark font-weight-bold text-align-center"
+        style="font-family: 'Roboto', sans-serif"
+      >
+        Lock
+      </h1>
+      <hr class="my-4" />
+      <p style="font-size: 18px; font-weight: 550; color: #555">
+        It is similar to the SCAN disk scheduling algorithm except for the
+        difference that the disk arm in spite of going to the end of the disk
+        goes only to the last request to be serviced in front of the head and
+        then reverses its direction from there only. Thus it prevents the extra
+        delay which occurred due to unnecessary traversal to the end of the
+        disk.
+      </p>
+    </div>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Shortest Seek Time First (SSTF) - Explanation</title>
+  <link rel="stylesheet" type="text/css" href="algo2.css" />
+  <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+   rel="stylesheet"
+  />
+ </head>
+ <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+  <div id="particles-js">
+   <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="HomePage.html" style="font-size: 20px; font-weight: 550"
+     >Home</a
+    >
+    <a
+     class="navbar-brand ml-auto"
+     href="Page-Replacement-1.html"
+     style="font-size: 20px; font-weight: 550"
+     >Simulation</a
+    >
+    <a class="navbar-brand" href="graphs.html" style="font-size: 20px; font-weight: 550"
+     >Graphs</a
+    >
+
+    <button
+     class="navbar-toggler"
+     type="button"
+     data-toggle="collapse"
+     data-target="#navbarColor01"
+     aria-controls="navbarColor01"
+     aria-expanded="false"
+     aria-label="Toggle navigation"
+    >
+     <span class="navbar-toggler-icon"></span>
+    </button>
+   </nav>
+   <br />
+
+   <div class="title">
+    <h1 class="mb-5">CONCEPT - Shortest Seek Time First (SSTF)</h1>
+    <div class="btn col-md-8">
+     <a class="btn btn-outline-primary col-md-4" href="Page-Replacement-1.html"
+      >Simulation</a
+     >
+     <a class="btn btn-outline-primary col-md-4" href="graphs.html">Graphs</a>
+    </div>
+   </div>
+  </div>
+
+  <br />
+  <br />
+  <div class="container">
+   <h1
+    class="display-3 text-dark font-weight-bold text-align-center"
+    style="font-family: 'Roboto', sans-serif"
+   >
+    Shortest Seek Time First algorithm
+   </h1>
+   <hr class="my-4" />
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    In SSTF (Shortest Seek Time First), requests having shortest seek time are executed
+    first. So, the seek time of every request is calculated in advance in the queue and
+    then they are scheduled according to their calculated seek time. As a result, the
+    request near the disk arm will get executed first. SSTF is certainly an improvement
+    over FCFS as it decreases the average response time and increases the throughput of
+    system.Let us understand this with the help of an example.
+   </p>
+
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    Example:<br />
+    Suppose the order of request is- (82,170,43,140,24,16,190)<br />
+    And current position of Read/Write head is : 50
+   </p>
+   <img
+    src="https://media.geeksforgeeks.org/wp-content/uploads/20200608201702/sstf1.jpg"
+   />
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    So, total seek time:<br />
+    = (50-43)+(43-24)+(24-16)+(82-16)+(140-82)+(170-40)+(190-170) <br />
+    = 208
+   </p>
+   <p style="font-size: 18px; font-weight: 550; color: #555">
+    Advantages: <br />Average Response Time decreases <br />Throughput increases
+    <br /><br />Disadvantages:<br />
+    Overhead to calculate seek time in advance <br />Can cause Starvation for a request if
+    it has higher seek time as compared to incoming requests <br />High variance of
+    response time as SSTF favours only some requests
+   </p>
+  </div>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+ </body>
+</html>
