@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>First Come First Serve (FCFS) - Explanation</title>
+  <link rel="stylesheet" type="text/css" href="disk_algo.css" />
+  <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+   rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link href="//fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap" rel="stylesheet">
+  <script src="disk_script.js"></script>
+ </head>
+ <body style="scroll-behavior: smooth; text-decoration: none; outline: none">
+  <div id="particles-js">
+   <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="HomePage.html" style="font-size: 20px; font-weight: 550"
+     >Home</a
+    >
+    <a class="navbar-brand" href="disk_front.html" style="font-size: 20px; font-weight: 550"
+     >DSA</a
+    >
+    <button
+     class="navbar-toggler"
+     type="button"
+     data-toggle="collapse"
+     data-target="#navbarColor01"
+     aria-controls="navbarColor01"
+     aria-expanded="false"
+     aria-label="Toggle navigation"
+    >
+     <span class="navbar-toggler-icon"></span>
+    </button>
+   </nav>
+   <br />
+
+   <div class="title">
+    <h1 class="mb-5">Implementation Of Disk Scheduling Algorithms</h1>
+    <!-- <div class="btn col-md-8">
+     <a class="btn btn-outline-primary col-md-4" href="algo1-concept.html">Concept</a>
+    </div> -->
+   </div>
+  </div>
+  <br>
+  <br>
+  <div class="pageContainer">
+        <!--<h1 class="page-title">Disk Scheduling Algorithm</h1>-->
+        <div class="inputs">
+            <div class="algorithm-input">
+                <label for="numbers">Please Select your Algorithm: </label>
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                    <button onclick="selectAlgo(this);" value="fcfs" type="button" class="btn btn-outline-success">First Come -First Serve (FCFS)</button>
+
+                    <button onclick="selectAlgo(this);" value="sstf" type="button" class="btn btn-outline-success">Shortest Seek Time First (SSTF)</button>
+
+                    <button onclick="selectAlgo(this);" value="scan" type="button" class="btn btn-outline-success">Elevator (SCAN)</button>
+
+                    <!-- <button onclick="selectAlgo(this);" value="cscan" type="button" class="btn btn-outline-success">Circular Scan (C-SCAN)</button>
+
+                    <button onclick="selectAlgo(this);" value="look" type="button" class="btn btn-outline-success">Look</button>
+
+                    <button onclick="selectAlgo(this);" value="clook" type="button" class="btn btn-outline-success">C-Look</button> -->
+
+                </div>
+            </div>
+            <div class="number-input">
+                <label for="numbers">Input-Queue separate with space: </label>
+                <input type="text" name="numbers" id="inputNumbers" class="form-control" placeholder="eg: &quot;82 170 43 140 24 16 190&quot;">
+                <br>
+            </div>
+            <div class="start-input">
+                <div>
+                    <label for="numbers">Read-Write heads current position: </label>
+                    <input type="text" name="numbers" id="inputHeadPos" class="form-control" placeholder="50">
+                </div>
+                <br>
+                <br>
+                <div class="btnVisualizeContainer">
+                    <button onclick="Calculate();" id="btnVisualize" type="button" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+            <div id="errorMessage">
+
+            </div>
+            <br>
+            </div>
+            <div class="canvas">
+                <canvas id="canvas" width="1000" height="60"></canvas>
+            </div>
+            <div id="count-output">
+            </div>
+        </div>
+        <br>
+        <br> 
+    </div>
+
+<!-- Template JavaScript -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+
+<script src="assets/js/theme-change.js"></script>
+
+<script src="assets/js/owl.carousel.js"></script>
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+  $(function () {
+    $('.navbar-toggler').click(function () {
+      $('body').toggleClass('noscroll');
+    })
+  });
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+<!--/MENU-JS-->
+<script>
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 80) {
+      $("#site-header").addClass("nav-fixed");
+    } else {
+      $("#site-header").removeClass("nav-fixed");
+    }
+  });
+
+  //Main navigation Active Class Add Remove
+  $(".navbar-toggler").on("click", function () {
+    $("header").toggleClass("active");
+  });
+  $(document).on("ready", function () {
+    if ($(window).width() > 991) {
+      $("header").removeClass("active");
+    }
+    $(window).on("resize", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+    });
+  });
+</script>
+<!--//MENU-JS-->
+
+<script src="assets/js/bootstrap.min.js"></script>
+  <div class="container">
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+ </body>
+</html>
